@@ -3,7 +3,7 @@
 This repository hosts the technical publications for Oracle for Research. 
 NOTE: These would eventually be moved to Oracle for Research github site
 
-1. Getting started with OCI 
+1. [Getting started with your Oracle cloud tenancy](https://blogs.oracle.com/oracle-for-research/oracle-cloud-fundamentals-for-researchers%3a-getting-started-with-your-cloud-tenancy)
 2. Moving data to an Oracle cloud Instance
 3. Important considerations for setting up and Oracle cloud instance
 4. Important links for Researchers
