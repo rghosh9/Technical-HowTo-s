@@ -52,10 +52,16 @@ Docker should be running after the above code executes successfully as shown bel
 2. Check logging in with docker 
 <pre><code>sudo docker login container-registry.oracle.com</code></pre>
 
-#### Login as root and setup KUBE_REPO_PREFIX
-<pre><code>sudo docker login container-registry-phx.oracle.com
-sudo export KUBE_REPO_PREFIX=container-registry-phx.oracle.com/kubernetes
-sudo echo 'export KUBE_REPO_PREFIX=container-registry-phx.oracle.com/kubernetes' >> ~/.bashrc</code></pre>
+#### Login as root 
+<pre><code>sudo su -</code></pre>
+
+#### Setup KUBE_REPO_PREFIX
+<pre><code>docker login container-registry-phx.oracle.com
+Username: <your email address>
+Password: <Your container-registry password>
+export KUBE_REPO_PREFIX=container-registry-phx.oracle.com/kubernetes
+echo 'export KUBE_REPO_PREFIX=container-registry-phx.oracle.com/kubernetes' >> ~/.bashrc
+cat ~/.bashrc</code></pre>
 
 #### Install ntp server
 <pre><code>sudo yum install ntp -y
@@ -63,6 +69,49 @@ sudo systemctl start ntpd
 sudo systemctl enable ntpd
 sudo systemctl status ntpd</code></pre>
 ntpd service should be active and running after the code above executes successfully
+
+#### Setup iptables and firewall configuration (perform as root)
+<pre><code>iptables -P FORWARD ACCEPT
+firewall-cmd --add-masquerade --permanent
+firewall-cmd --add-port=10250/tcp --permanent
+firewall-cmd --add-port=8472/udp --permanent
+firewall-cmd --add-port=6443/tcp --permanent
+systemctl restart firewalld
+systemctl status firewalld</code></pre>
+The firewalld service should be restarted and running. The time 2s shows that it has just restarted
+![](images/firewalld.png)
+
+#### Configure certain network requirements (perform as root)
+<pre><code>lsmod|grep br_netfilter
+modprobe br_netfilter
+echo "br_netfilter" >> /etc/modules-load.d/br_netfilter.conf
+echo "net.bridge.bridge-nf-call-ip6tables = 1" >> /etc/sysctl.d/k8s.conf
+echo "net.bridge.bridge-nf-call-iptables = 1" >> /etc/sysctl.d/k8s.conf
+/sbin/sysctl -p /etc/sysctl.d/k8s.conf</code></pre>
+![](images/netbridge.png)
+
+#### Setup SELINUX (perform as root)
+/usr/sbin/setenforce 0
+Edit the file /etc/selinux/config (you can use vi or nano editor), change the value as shown below and save the file 
+SELINUX=Permissive
+
+**NOTE:** Repeat the above steps for each one of the nodes until they are successfully completed.If you encounter failure, recreate the instance and start from the beginning
+
+#### Setup Oracle cloud security lists (for private subnet)
+1. Login to Oracle cloud
+2. Go to Menu-->Networking-->Virtual Cloud Network & open up the k8s VCN
+3. Click and open the private-subnet-k8s-vcn
+4. Click and open the security-list-private-subnet-k8s-vcn
+5. Create an ingress rule as shown below 
+![](images/ingress1.png)
+6. Create another ingress rule for destination port 10250
+7. Create anaother ingress rule for destination port 8472 but choose UDP instead of TCP
+8. The final picture after the addition should look like 
+![](images/ingress2.png)
+
+**NOTE:** DO THE FOLLOWING FOR THE MASTER NODE ONLY
+
+**NOTE:** DO THE FOLLOWING FOR THE WORKER NODES ONLY
 
 ### Reference
 * [Oracle k8s install guide](https://docs.oracle.com/en/operating-systems/oracle-linux/kubernetes/kubernetes_install_upgrade.html)
