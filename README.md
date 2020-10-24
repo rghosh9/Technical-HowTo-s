@@ -8,4 +8,7 @@ NOTE: These would eventually be moved to Oracle for Research github site
 3. [Important considerations for setting up and Oracle cloud instance](https://github.com/rghosh9/OFRTechnicalPublications/blob/main/Quick%20Oracle%20Cloud%20links%20for%20researchers.docx)
 4. [Important links for Researchers](https://github.com/rghosh9/OFRTechnicalPublications/blob/main/Important%20Considerations%20for%20setting%20up%20an%20Oracle%20Cloud%20Instance.docx)
 
+#### Kubernetes
+1. [Kubernetes on OCI Installation](https://github.com/rghosh9/Technical-HowTo-s/blob/main/k8s-on-oci.md)
+
 [Technology presentation - 10/2/2020](https://github.com/rghosh9/OFRTechnicalPublications/blob/main/OFRTechnologyTalk-10022020.pptx)
