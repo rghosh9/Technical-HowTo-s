@@ -111,6 +111,22 @@ SELINUX=Permissive
 
 **NOTE:** DO THE FOLLOWING FOR THE MASTER NODE ONLY
 
+#### Install and configure kubernetes (perform as root)
+<pre><code>yum install kubeadm kubelet kubectl
+kubeadm-setup.sh up</code></pre>
+After successful installation - it should display as 
+![](images/k8s-2.png)
+1. Exit out of root account, copy the code circled in blue and run in opc or any account you wish to run kubectl and connect to kubernetes
+2. Copy the code spitted out in red and keep it in a safe place. You would need to run this for each node
+
+#### Setup KUBECONFIG environment variable (perform as opc or non-root account)
+export KUBECONFIG=$HOME/.kube/config
+echo 'export KUBECONFIG=$HOME/.kube/config' >> $HOME/.bashrc
+
+#### Verify the kubernetes install
+<pre><code>kubectl get pods -n kube-system</code></pre>
+1. It should display all the pods in the kubs-system namespace
+
 **NOTE:** DO THE FOLLOWING FOR THE WORKER NODES ONLY
 
 ### Reference
