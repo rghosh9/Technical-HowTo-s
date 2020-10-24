@@ -96,8 +96,8 @@ echo "net.bridge.bridge-nf-call-iptables = 1" >> /etc/sysctl.d/k8s.conf
 Edit the file /etc/selinux/config (you can use vi or nano editor), change the value as shown below and save the file 
 SELINUX=Permissive
 
-#### set swap off 
-<pre><code>sudo swapoff -a</code></pre> 
+#### set swap off (perform as root)
+<pre><code>swapoff -a</code></pre> 
 
 **NOTE:** Repeat the above steps for each one of the nodes until they are successfully completed.If you encounter failure, recreate the instance and start from the beginning
 
