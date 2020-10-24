@@ -47,13 +47,13 @@ sudo systemctl status docker</code></pre>
 Docker should be running after the above code executes successfully as shown below
 ![](images/dockerRunning.png)
 
+#### Login as root 
+<pre><code>sudo su -</code></pre>
+
 #### Check Oracle container registry account 
 1. Check https://container-registry.oracle.com to see if you can login through SSO userid and password
 2. Check logging in with docker 
-<pre><code>sudo docker login container-registry.oracle.com</code></pre>
-
-#### Login as root 
-<pre><code>sudo su -</code></pre>
+<pre><code>docker login container-registry.oracle.com</code></pre>
 
 #### Setup KUBE_REPO_PREFIX
 <pre><code>docker login container-registry-phx.oracle.com
