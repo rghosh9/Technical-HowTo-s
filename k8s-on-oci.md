@@ -44,7 +44,8 @@ sudo yum update -y</code></pre>
 sudo systemctl enable docker
 sudo systemctl start docker
 sudo systemctl status docker</code></pre>
-The status for docker should be running after the above code executes successfully
+Docker should be running after the above code executes successfully as shown below
+![](images/dockerRunning.png)
 
 #### Check Oracle container registry account 
 1. Check https://container-registry.oracle.com to see if you can login through SSO userid and password
@@ -52,12 +53,16 @@ The status for docker should be running after the above code executes successful
 <pre><code>sudo docker login container-registry.oracle.com</code></pre>
 
 #### Login as root and setup KUBE_REPO_PREFIX
-<pre><code>sudo su - 
-docker login container-registry-phx.oracle.com
-export KUBE_REPO_PREFIX=container-registry-phx.oracle.com/kubernetes
-echo 'export KUBE_REPO_PREFIX=container-registry-phx.oracle.com/kubernetes' >> ~/.bashrc</code></pre>
+<pre><code>sudo docker login container-registry-phx.oracle.com
+sudo export KUBE_REPO_PREFIX=container-registry-phx.oracle.com/kubernetes
+sudo echo 'export KUBE_REPO_PREFIX=container-registry-phx.oracle.com/kubernetes' >> ~/.bashrc</code></pre>
 
 #### Install ntp server
+<pre><code>sudo yum install ntp -y
+sudo systemctl start ntpd
+sudo systemctl enable ntpd
+sudo systemctl status ntpd</code></pre>
+ntpd service should be active and running after the code above executes successfully
 
 ### Reference
 * [Oracle k8s install guide](https://docs.oracle.com/en/operating-systems/oracle-linux/kubernetes/kubernetes_install_upgrade.html)
