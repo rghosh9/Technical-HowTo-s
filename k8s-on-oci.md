@@ -135,7 +135,7 @@ echo 'export KUBECONFIG=$HOME/.kube/config' >> $HOME/.bashrc
 
 #### Install kubernetes tools on nodes (perform as root)
 <pre><code>yum install kubeadm kubelet kubectl -y</code></pre>
-Copy the code from notepad you copied before and run. This joins the node to the cluster
-
+Copy the code from notepad you copied before and run. This joins the node to the cluster (shown below)
+![](images/k8s-3.png)
 ### Reference
 * [Oracle k8s install guide](https://docs.oracle.com/en/operating-systems/oracle-linux/kubernetes/kubernetes_install_upgrade.html)
