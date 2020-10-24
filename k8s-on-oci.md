@@ -87,13 +87,17 @@ modprobe br_netfilter
 echo "br_netfilter" >> /etc/modules-load.d/br_netfilter.conf
 echo "net.bridge.bridge-nf-call-ip6tables = 1" >> /etc/sysctl.d/k8s.conf
 echo "net.bridge.bridge-nf-call-iptables = 1" >> /etc/sysctl.d/k8s.conf
-/sbin/sysctl -p /etc/sysctl.d/k8s.conf</code></pre>
+/sbin/sysctl -p /etc/sysctl.d/k8s.conf
+/sbin/iptables -P FORWARD ACCEPT</code></pre>
 ![](images/netbridge.png)
 
 #### Setup SELINUX (perform as root)
 /usr/sbin/setenforce 0
 Edit the file /etc/selinux/config (you can use vi or nano editor), change the value as shown below and save the file 
 SELINUX=Permissive
+
+#### set swap off 
+<pre><code>sudo swapoff -a</code></pre> 
 
 **NOTE:** Repeat the above steps for each one of the nodes until they are successfully completed.If you encounter failure, recreate the instance and start from the beginning
 
@@ -112,12 +116,12 @@ SELINUX=Permissive
 **NOTE:** DO THE FOLLOWING FOR THE MASTER NODE ONLY
 
 #### Install and configure kubernetes (perform as root)
-<pre><code>yum install kubeadm kubelet kubectl
+<pre><code>yum install kubeadm kubelet kubectl -y
 kubeadm-setup.sh up</code></pre>
 After successful installation - it should display as 
 ![](images/k8s-2.png)
 1. Exit out of root account, copy the code circled in blue and run in opc or any account you wish to run kubectl and connect to kubernetes
-2. Copy the code spitted out in red and keep it in a safe place. You would need to run this for each node
+2. Copy the code (spitted out in red) in a notepad and keep it in a safe place. You would need to run this for each node
 
 #### Setup KUBECONFIG environment variable (perform as opc or non-root account)
 export KUBECONFIG=$HOME/.kube/config
@@ -128,6 +132,10 @@ echo 'export KUBECONFIG=$HOME/.kube/config' >> $HOME/.bashrc
 1. It should display all the pods in the kubs-system namespace
 
 **NOTE:** DO THE FOLLOWING FOR THE WORKER NODES ONLY
+
+#### Install kubernetes tools on nodes (perform as root)
+<pre><code>yum install kubeadm kubelet kubectl -y</code></pre>
+Copy the code from notepad you copied before and run. This joins the node to the cluster
 
 ### Reference
 * [Oracle k8s install guide](https://docs.oracle.com/en/operating-systems/oracle-linux/kubernetes/kubernetes_install_upgrade.html)
