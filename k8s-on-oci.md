@@ -137,5 +137,12 @@ echo 'export KUBECONFIG=$HOME/.kube/config' >> $HOME/.bashrc
 <pre><code>yum install kubeadm kubelet kubectl -y</code></pre>
 Copy the code from notepad you copied before and run. This joins the node to the cluster (shown below)
 ![](images/k8s-3.png)
+
+**NOTE:** DO THE FOLLOWING AFTER ALL THE NODES ARE CONFIGURED AND JOINED TO CLUSTER SUCCESSFULLY (PERFORM FROM MASTER NODE ONLY)
+<pre><code>kubectl get nodes</code></pre>
+![](images/ready.png)
+
+If the above is displayed, your kubernetes cluster is ready and running
+
 ### Reference
 * [Oracle k8s install guide](https://docs.oracle.com/en/operating-systems/oracle-linux/kubernetes/kubernetes_install_upgrade.html)
