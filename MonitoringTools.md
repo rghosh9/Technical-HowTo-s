@@ -4,6 +4,7 @@
 
 #### Linux monitoring tools 
 ##### CPU monitoring 
+1. sar - part of the sysstat package. You can monitor
 top 
 <pre><code>top -p $PID | grep docker</code></pre>
 htop - to install in RHEL/Oracle install 
