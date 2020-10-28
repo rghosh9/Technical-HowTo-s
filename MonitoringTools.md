@@ -1,4 +1,4 @@
-## Cloud monitoring tools
+## Cloud monitoring tools (DRAFT)
 
 ### Overview 
 
@@ -76,8 +76,15 @@ sda3              2.21        12.20        16.91     852116    1181064
 sda1              0.00         0.03         0.00       2212          0</code></pre>
 7.lsof - (ls open files
 
-#### Telemetry monitoring tools 
+#### OCI Telemetry monitoring tools 
+https://docs.cloud.oracle.com/en-us/iaas/Content/Monitoring/Concepts/monitoringoverview.htm
 
+[Compute instance metrics](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computemetrics.htm#Compute_Instance_Metrics)
+CPU Utilization 
+DiskBytesRead
+
+[Monitoring REST API](https://docs.cloud.oracle.com/en-us/iaas/api/)
+[Command line interface](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm#Command_Line_Interface_CLI)
 #### CPU / GPU Monitoring tools (NVIDIA)
 1. [NVIDIA-smi](https://developer.nvidia.com/nvidia-system-management-interface) 
 The NVIDIA System Management Interface (nvidia-smi) is a command line utility, based on top of the [NVIDIA Management Library (NVML)](https://developer.nvidia.com/nvidia-management-library-nvml), intended to aid in the management and monitoring of NVIDIA GPU devices.
