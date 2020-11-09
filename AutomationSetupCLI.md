@@ -18,3 +18,30 @@ Once done you should get the following fingerprint
 
 1. However, for security purposes, it is recommended to generate a public key pair and create your own API key for security. 
 2. The keys should be created in pem format and should be added through the OCI CLI console to 
+
+#### Getting the image 
+
+#### Generating a SSH public / private key pair 
+1. Option 1: (Easiest way) Try to spin up a compute instance and download the public and private SSH and cut/paste it to update the file in the pem format.
+2. Option 2: Generate your own public / private key pair and use this
+
+#### Getting the key attributes from your tenancy 
+Copy the OCID for the following components and keep in your notepad:
+1. User: Profile (right top corner) --> User settings --> Copy the User OCID
+2. Tenancy: Profile (right top corner) --> Tenancy --> Copy the tenancy OCID
+3. API fingerprint: Profile (right top corner) --> User settings --> API Key --> fingerprint
+
+#### OCI CLI configuration
+Edit the file ~/.oci/config (use a editor i,e vi or nano of your choice) to edit and fill in the user, fingerprint, tenancy, region
+Edit the oci_api_key.pem and oci_api_key_public.pem files to include your private and public keys respectively
+
+#### Passphrase
+1. Default passphrase is set to research. You can change it to your passphrase for OCI
+
+#### Testing OCI CLI 
+Run the following code and if it outputs a json, you should be all set
+<pre><code>$oci os ns get
+Private key passphrase:
+{
+  "data": "ideqbfsd51fu"
+}<code></pre> 
