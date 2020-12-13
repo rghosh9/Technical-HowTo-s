@@ -6,7 +6,10 @@ NOTE: These would eventually be moved to Oracle for Research github site
 1. [Getting started with your Oracle cloud tenancy](https://blogs.oracle.com/oracle-for-research/oracle-cloud-fundamentals-for-researchers%3a-getting-started-with-your-cloud-tenancy)
 2. [Moving data to an Oracle cloud Instance](https://github.com/rghosh9/OFRTechnicalPublications/blob/main/Quick%20Oracle%20Cloud%20links%20for%20researchers.docx)
 3. [Important considerations for setting up and Oracle cloud instance](https://github.com/rghosh9/OFRTechnicalPublications/blob/main/Quick%20Oracle%20Cloud%20links%20for%20researchers.docx)
-4. [Important links for Researchers](https://github.com/rghosh9/OFRTechnicalPublications/blob/main/Important%20Considerations%20for%20setting%20up%20an%20Oracle%20Cloud%20Instance.docx)
+4. [Mounting shared block storage in a cluster](https://github.com/OracleForResearch/Technology-How-Tos/blob/main/Mounting%20shared%20block%20storage.md)
+5. [SSH options for cloud access (upcoming)]. 
+6. [Setting up User Configuration and Organization structure](https://github.com/OracleForResearch/Technology-How-Tos/blob/main/Setting-up-an=Org-structure.md)
+7. [Identity federation and options (upcoming)]
 
 #### Kubernetes
 1. [Kubernetes on OCI Installation](https://github.com/rghosh9/Technical-HowTo-s/blob/main/k8s-on-oci.md)
