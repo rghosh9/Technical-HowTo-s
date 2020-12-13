@@ -17,8 +17,6 @@ NOTE: These would eventually be moved to Oracle for Research github site
 #### Kubernetes
 1. [Kubernetes on OCI Installation](https://github.com/rghosh9/Technical-HowTo-s/blob/main/k8s-on-oci.md)
 
-[Technology presentation - 10/2/2020](https://github.com/rghosh9/OFRTechnicalPublications/blob/main/OFRTechnologyTalk-10022020.pptx)
-
 ### Architecture and automation
 1. [Standard Architecture](https://github.com/OracleForResearch/Technology-How-Tos/blob/main/StandardArchitecture.md)
 2. [Cloud Bursting Architecture](https://github.com/OracleForResearch/Technology-How-Tos/blob/main/CloudBursting.md)
