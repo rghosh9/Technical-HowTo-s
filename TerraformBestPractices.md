@@ -62,6 +62,18 @@ module "ssm_network" {
   ...
 }
 </code></pre>
+#### Build from custom image. No need to preserve boot volume
+<pre><code>
+resource "oci_core_instance" "TFInstance" {
+  ...
+  state = "STOPPED"                  // set this state to stop the instance
+  preserve_boot_volume = false
+}
+
+output "bootVolumeFromInstance" {
+  value = [oci_core_instance.TFInstance.boot_volume_id]
+}
+</code></pre>
 
 ### References 
 * [Terraform best practices](https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformbestpractices.htm)
