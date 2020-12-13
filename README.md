@@ -15,7 +15,7 @@ NOTE: These would eventually be moved to Oracle for Research github site
 7. [Identity federation and options (upcoming)]
 
 #### Kubernetes
-1. [Kubernetes on OCI Installation](https://github.com/rghosh9/Technical-HowTo-s/blob/main/k8s-on-oci.md)
+1. [Kubernetes IaaS on OCI](https://github.com/rghosh9/Technical-HowTo-s/blob/main/k8s-on-oci.md)
 
 ### Architecture and automation
 1. [Standard Architecture](https://github.com/OracleForResearch/Technology-How-Tos/blob/main/StandardArchitecture.md)
