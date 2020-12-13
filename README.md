@@ -1,3 +1,6 @@
+# Technology Talks 
+[Technology Talk](https://github.com/OracleForResearch/Technology-Talk)
+
 # Technical Publications
 
 This repository hosts the technical publications for Oracle for Research. 
