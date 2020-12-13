@@ -3,7 +3,7 @@
 
 ### Overview 
 * A consolidate quick step guide without going OCI or Terraform documentation
-* DRAFT stage
+* The document is in research and DRAFT stage
 
 ### Best practice guidelines 
 #### Reference image by OCID 
