@@ -75,6 +75,43 @@ output "bootVolumeFromInstance" {
 }
 </code></pre>
 
+### Other generic best practices
+##### Naming 
+##### Provider dependency
+* Do not import providers as GO modules - unsupported way with no maintenance gurantee from providers. 
+##### Error checking
+##### Drift detection
+* Capture all state in READ
+* Reconcile the drift - call a READ to update the TF state state
+<pre><code>
+func resourceExampleSimpleRead(d *schema.ResourceData, meta interface{}) error {
+   client := meta.(*ProviderApi).client
+   resource, _ := client.GetResource(d.Id())
+   d.Set("name", resource.Name)
+   d.Set("type", resource.Type)
+   return nil
+}
+func resourceExampleSimpleCreate(d *schema.ResourceData, meta interface{}) error {
+   client := meta.(*ProviderApi).client
+   name := d.Get("name").(string)
+   client.CreateResource(name)
+   d.SetId(name)
+   return resourceExampleSimpleRead(d, meta)
+}
+</code></pre>
+##### Handling sensitive data 
+* Set Sensitive property of the schema = true - This prevents the values from showing up in a CLI output script. It will not encrypt or obscure the value in the state
+* Do not encrypt the Terraform state 
+##### Testing patterns 
+[Testing patterns](https://www.terraform.io/docs/extend/best-practices/testing.html)
+##### Versioning and changelog
+##### For non-GO providers
+
+#### Using pre-commit hooks with Terraform
+Implementing pre-commit hooks with OCI provider as a self review checks for coding
+[Implement pre-commits](https://www.unixdaemon.net/tools/terraform-precommit-hooks)
+[Implement pre-commit github](https://github.com/antonbabenko/pre-commit-terraform)
+
 ### References 
 * [Terraform best practices](https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformbestpractices.htm)
 * [Terraform OCI Provider](https://registry.terraform.io/providers/hashicorp/oci/latest/docs/guides/best_practices)
