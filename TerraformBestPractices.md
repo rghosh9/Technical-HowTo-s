@@ -2,7 +2,8 @@
 ## Terraform Best practices
 
 ### Overview 
-A consolidate quick step guide without going OCI or Terraform documentation
+* A consolidate quick step guide without going OCI or Terraform documentation
+* DRAFT stage
 
 ### Best practice guidelines 
 #### Reference image by OCID 
