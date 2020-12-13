@@ -1,6 +1,14 @@
-## Setting up kubernetes on Oracle cloud 
+## Setting up kubernetes IaaS on Oracle cloud 
+By Rajib Ghosh - Global Senior Solutions Architect @ Oracle for Research
 
-
+### Overview 
+Kubernetes implementation on OCI Compute instance implements the following - 
+* IaaS and OCI CLI based solution as an alternative to Oracle Kubernetes engine
+* Complements OKE service with GPU enabled shapes
+* Nodes can be scaled based on OCI instance scaling setup
+* Can be built from k8s master and node custom images
+* Can be configured for auto-scaling on same k8s join token across node terminations
+* Master node can be built on a free-tier shape and should not be terminated
 
 ### Architecture
 ![](images/ArchStd.png)
