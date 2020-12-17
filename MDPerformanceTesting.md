@@ -35,4 +35,8 @@ An offshoot of the benchmark analysis is the safety pharmacology computation cos
 2.	NAMD 3.0 alpha showed an even scaling of costs with higher shapes and computational loads and are independent of virtual and bare metal machines used.
 3.	Cost scale up at a lower rate with increase of computational load for GPU accelerated NAMD3.0
 
-The expected results of the above benchmarks are in alignment with NAMD published standard benchmarks [ApoA1 and STMV](http://www.ks.uiuc.edu/Research/namd/benchmarks/) as well [NVIDIA MD benchmarks](https://developer.nvidia.com/blog/delivering-up-to-9x-throughput-with-namd-v3-and-a100-gpu/).
+The expected results of the above benchmarks are in alignment with NVIDIA and Oracle published benchmarks as shown below. 
+![](images/Oracle-1.png)
+![](images/Oracle-2.png)
+
+Further details on NAMD published standard benchmarks can be found in [ApoA1 and STMV](http://www.ks.uiuc.edu/Research/namd/benchmarks/) and [NVIDIA MD benchmarks](https://developer.nvidia.com/blog/delivering-up-to-9x-throughput-with-namd-v3-and-a100-gpu/).
