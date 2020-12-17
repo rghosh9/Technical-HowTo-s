@@ -1,8 +1,7 @@
 
 ## GPU benchmarking on Drug Cardiotoxicity prediction modeling on Oracle cloud
-By Igor Vorobyov, PhD Assistant professor, Department of Physiology UCDavis 
-
-and Rajib Ghosh, Global Senior Solutions Architect, Oracle for Research
+* Igor Vorobyov, PhD Assistant professor, Department of Physiology UCDavis 
+* Rajib Ghosh, Global Senior Solutions Architect, Oracle for Research
 
 ### Research Project
 Drug cardiotoxicity describes when a drug to cure one ailment also does harm to a patient’s heart.It is a serious and expensive problem where nearly 10% of drugs in the past decades have been pulled out from clinical market due to cardiovascular concerns. To truly assess cardiotoxicity risk, drugs must be tested in the context of comorbidities: what will this drug to do a patient who already has complicating factors that increase his or her risk of heart problems. The focus of the research project is to use advanced molecular dynamics simulations to develop an AI-driven in silico multi-scale functional model that predicts – in the early stages of drug development. Enterprise scale computing including high performance bare metal CPU and GPU shapes that can be used in combination with GPU accelerated tools accelerates the results by running simulations in an faster and effective manner. More details about the project can be found in the blog [here](https://blogs.oracle.com/oracle-for-research/high-performance-computing-helps-researchers-predict-whether-a-drug-will-harm-your-heart)
