@@ -2,6 +2,9 @@
 ## GPU benchmarking on Drug Cardiotoxicity prediction modeling on Oracle cloud
 By Rajib Ghosh, Global Senior Solutions Architect, Oracle for Research
 
+### Research Project
+Drug cardiotoxicity describes when a drug to cure one ailment also does harm to a patient’s heart.It is a serious and expensive problem where nearly 10% of drugs in the past decades have been pulled out from clinical market due to cardiovascular concerns. To truly assess cardiotoxicity risk, drugs must be tested in the context of comorbidities: what will this drug to do a patient who already has complicating factors that increase his or her risk of heart problems. The focus of the research project is to use advanced molecular dynamics simulations to develop an AI-driven in silico multi-scale functional model that predicts – in the early stages of drug development. Enterprise scale computing including high performance bare metal CPU and GPU shapes that can be used in combination with GPU accelerated tools accelerates the results by running simulations in an faster and effective manner. More details can found in the Oracle for Research blog [here](https://blogs.oracle.com/oracle-for-research/high-performance-computing-helps-researchers-predict-whether-a-drug-will-harm-your-heart)
+
 ### Tools and Techniques 
 NAMD  (Nanoscale molecular dynamics) is a parallel molecular dynamics (MD) code designed for high-performance simulation of large biomolecular systems. Based on Charm++ parallel objects, NAMD scales to hundreds of cores for typical simulations and beyond 500,000 cores for the largest simulations. NAMD uses the popular molecular graphics program VMD for simulation setup and trajectory analysis, but is also file-compatible with AMBER, CHARMM, and X-PLOR. NAMD is distributed free of charge with source code and is a prime choice for research intensive computations in the MD space
 
